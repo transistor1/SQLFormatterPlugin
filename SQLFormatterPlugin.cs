@@ -66,7 +66,9 @@ namespace SQLFormatterPlugin
 
                 using (var streamReader = new StreamReader(memStream))
                 {
-                    Properties.Settings.Default.SQLFormatterOptions = streamReader.ReadToEnd();
+                    string xml = streamReader.ReadToEnd();
+                    xml = xml.Replace("<IndentString>", "<IndentString xml:space=\"preserve\">");
+                    Properties.Settings.Default.SQLFormatterOptions = xml;
                     Properties.Settings.Default.Save();
                 }
             }

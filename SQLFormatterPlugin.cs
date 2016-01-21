@@ -157,18 +157,27 @@ namespace SQLFormatterPlugin
             pi.ErrorDialog = false;
             pi.CreateNoWindow = true;
 
-            Process p = new Process();
-            p.StartInfo = pi;
-            p.Start();
-            
-            p.StandardInput.Write(Convert.ToBase64String(Encoding.UTF8.GetBytes(context.Editor.Text)));
-            p.StandardInput.Write((char)0x04);
-            
-            string Result = p.StandardOutput.ReadToEnd();
-            Result = Encoding.UTF8.GetString(Convert.FromBase64String(Result));
-            
-            p.WaitForExit();
-            context.Editor.Text = Result;
+            try
+            {
+                using (Process p = new Process())
+                {
+                    p.StartInfo = pi;
+                    p.Start();
+
+                    p.StandardInput.Write(Convert.ToBase64String(Encoding.UTF8.GetBytes(context.Editor.Text)));
+                    p.StandardInput.Write((char)0x04);
+
+                    string Result = p.StandardOutput.ReadToEnd();
+                    Result = Encoding.UTF8.GetString(Convert.FromBase64String(Result));
+
+                    p.WaitForExit();
+                    context.Editor.Text = Result;
+                }
+            }
+            catch(Win32Exception ex)
+            {
+                context.Editor.Text = "-- !! Couldn't find SQLFormatter.exe!\r\n\r\n" + context.Editor.Text;
+            }
         }
 
         private string ExePath

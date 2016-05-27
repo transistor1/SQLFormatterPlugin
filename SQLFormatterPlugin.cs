@@ -174,7 +174,7 @@ namespace SQLFormatterPlugin
                     context.Editor.Text = Result;
                 }
             }
-            catch(Win32Exception ex)
+            catch(Win32Exception)
             {
                 context.Editor.Text = "-- !! Couldn't find SQLFormatter.exe!\r\n\r\n" + context.Editor.Text;
             }

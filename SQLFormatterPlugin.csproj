@@ -141,7 +141,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MsaSQLEditor\MsaSQLEditor.csproj">
+    <ProjectReference Include="..\..\MsaSQLEditor\MsaSQLEditor.csproj">
       <Project>{75A2A088-2780-48CD-9098-12CCB0598D48}</Project>
       <Name>MsaSQLEditor</Name>
       <Private>False</Private>
@@ -150,7 +150,7 @@
       <Project>{8886108c-ee97-475a-8502-08540c2b682f}</Project>
       <Name>PluginInterface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ScintillaNET-2.6\ScintillaNET\ScintillaNET.csproj">
+    <ProjectReference Include="..\..\SolutionItems\3rdParty\ScintillaNET-2.6\ScintillaNET\ScintillaNET.csproj">
       <Project>{f9b6dabd-bbc1-4638-8ce6-a5c9506bfdcb}</Project>
       <Name>ScintillaNET</Name>
     </ProjectReference>

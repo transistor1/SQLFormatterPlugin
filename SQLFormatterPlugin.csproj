@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\build\plugins\</OutputPath>
+    <OutputPath>..\..\build\plugins\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -146,7 +146,7 @@
       <Name>MsaSQLEditor</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\PluginInterface\PluginInterface.csproj">
+    <ProjectReference Include="..\..\PluginInterface\PluginInterface.csproj">
       <Project>{8886108c-ee97-475a-8502-08540c2b682f}</Project>
       <Name>PluginInterface</Name>
     </ProjectReference>
